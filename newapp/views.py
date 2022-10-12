@@ -17,7 +17,6 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 import requests
 from bs4 import BeautifulSoup
-import pandas as pd
 import time
 from celery.result import AsyncResult
 from .tasks import get_g
