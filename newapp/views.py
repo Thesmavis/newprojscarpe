@@ -18,8 +18,8 @@ from rest_framework.views import APIView
 import requests
 from bs4 import BeautifulSoup
 import time
-from celery.result import AsyncResult
-from .tasks import get_g
+# from celery.result import AsyncResult
+# from .tasks import get_g
 
 
 
