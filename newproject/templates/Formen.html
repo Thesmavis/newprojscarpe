@@ -1,0 +1,67 @@
+<!DOCYTPE html>
+<html> 
+	<head>
+	<title>Front Page</title>
+	<style>
+	* {
+  box-sizing: border-box;
+}
+.row{
+width:1400px;
+}
+
+.column {
+  float: left;
+  width: 35	0px;
+  padding: 5px;
+}
+
+.row::after {
+  content: "";
+  display: table;
+}
+	</style>
+	<meta name="viewport" content="width=divice-width" initial-scale="1">
+	<link rel="Stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	</head>
+	<body>
+	<h1 class="w3-center">DEMO WEBSITE</h1>
+	<div class="w3-bar w3-black">
+		<a href='http://127.0.0.1:8000/homepage/' class="w3-bar-item w3-button w3-hover-red">Home</a>
+	</div>
+	  <div class="w3-display-container mySlides" style="width:100%; height:90%;">
+	 
+	   <form action="/url/" method="post">>
+		{% csrf_token %}
+		<script>
+			const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+			</script>
+		<table border="1" cellpadding="5">
+            <tr>
+                <th>ENTER URL</th>
+                <td><input type="text" name="url" /></td>
+            </tr>
+			<td colspan="2"><input type="submit" value="Submit" /></td>
+		</tr>
+	</table>
+		{% if form.errors %}
+        {% for field in form %}
+        {% for error in field.errors %}
+            <div class="alert alert-danger">
+                <strong>{{ error|escape }}</strong>
+            </div>
+        {% endfor %}
+    {% endfor %}
+    {% for error in form.non_field_errors %}
+        <div class="alert alert-danger">
+            <strong>{{ error|escape }}</strong>
+        </div>
+    {% endfor %}
+{% endif %}
+	  </form>
+	  
+	
+	</div>
+	</div>
+	</body>
+</html>
